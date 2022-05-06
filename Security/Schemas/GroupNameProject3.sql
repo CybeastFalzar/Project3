@@ -1,0 +1,3 @@
+CREATE SCHEMA [GroupNameProject3]
+AUTHORIZATION [dbo]
+GO
