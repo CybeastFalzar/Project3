@@ -1,0 +1,3 @@
+CREATE SCHEMA [Courses]
+AUTHORIZATION [dbo]
+GO

@@ -1,8 +1,16 @@
 CREATE TABLE [dbo].[InstructorDepartments]
 (
-[InstructorID] [int] NULL,
-[FullName] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-[DepartmentID] [int] NULL,
-[DepartmentName] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+[InstructorID] [Staff].[InstructorID] NULL,
+[FullName] [Staff].[FullName] NULL,
+[DepartmentID] [Department].[DepartmentID] NULL,
+[DepartmentName] [Department].[DepartmentName] NULL
 ) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[InstructorDepartments] ADD CONSTRAINT [InstructorDepartments_DepartmentID] CHECK (([DepartmentID] like '%[^0-9]%'))
+GO
+ALTER TABLE [dbo].[InstructorDepartments] ADD CONSTRAINT [InstructorDepartments_DepartmentName] CHECK (([DepartmentName] like '%[^A-Z_ ]%'))
+GO
+ALTER TABLE [dbo].[InstructorDepartments] ADD CONSTRAINT [InstructorDepartments_FullName] CHECK (([InstructorID] like '%[^A-Z_ ]%'))
+GO
+ALTER TABLE [dbo].[InstructorDepartments] ADD CONSTRAINT [InstructorDepartments_InstructorID] CHECK (([InstructorID] like '%[^0-9]%'))
 GO
