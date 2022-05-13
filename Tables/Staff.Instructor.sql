@@ -9,3 +9,5 @@ CREATE TABLE [Staff].[Instructor]
 [DateOfLastUpdate] [datetime2] NULL CONSTRAINT [DF_Instructor_DateOfLastUpdate] DEFAULT (sysdatetime())
 ) ON [PRIMARY]
 GO
+ALTER TABLE [Staff].[Instructor] ADD CONSTRAINT [PK_Instructor] PRIMARY KEY CLUSTERED ([InstructorID]) ON [PRIMARY]
+GO

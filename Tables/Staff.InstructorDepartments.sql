@@ -9,3 +9,7 @@ CREATE TABLE [Staff].[InstructorDepartments]
 [DateOfLastUpdate] [datetime2] NULL CONSTRAINT [DF_InstructorDepartments_DateOfLastUpdate] DEFAULT (sysdatetime())
 ) ON [PRIMARY]
 GO
+ALTER TABLE [Staff].[InstructorDepartments] ADD CONSTRAINT [FK_InstructorDepartments_Department] FOREIGN KEY ([DepartmentName]) REFERENCES [Staff].[Department] ([DepartmentName])
+GO
+ALTER TABLE [Staff].[InstructorDepartments] ADD CONSTRAINT [FK_InstructorDepartments_Instructor] FOREIGN KEY ([InstructorID]) REFERENCES [Staff].[Instructor] ([InstructorID])
+GO
