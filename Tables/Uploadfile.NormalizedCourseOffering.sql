@@ -3,6 +3,7 @@ CREATE TABLE [Uploadfile].[NormalizedCourseOffering]
 [Semester] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [Sec] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [Code] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DepartmentName] [nchar] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [Course (hr, crd)] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [Description] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [Day] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,

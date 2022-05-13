@@ -1,0 +1,3 @@
+CREATE SCHEMA [DbSecurity]
+AUTHORIZATION [dbo]
+GO
