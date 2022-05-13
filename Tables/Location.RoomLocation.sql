@@ -1,7 +1,7 @@
 CREATE TABLE [Location].[RoomLocation]
 (
-[RoomNo] [Location].[RoomNo] NULL
+[RoomNo] [Location].[RoomNo] NOT NULL
 ) ON [PRIMARY]
 GO
-ALTER TABLE [Location].[RoomLocation] ADD CONSTRAINT [InstructorDepartments_RoomNo] CHECK (([RoomNo] like '%[^A-Z0-9_ ]%'))
+ALTER TABLE [Location].[RoomLocation] ADD CONSTRAINT [PK_RoomLocation] PRIMARY KEY CLUSTERED ([RoomNo]) ON [PRIMARY]
 GO
