@@ -8,10 +8,10 @@ GO
 -- Description:	
 -- =============================================
 
-CREATE PROCEDURE [Project3].[Load_BuildingLocation]
+CREATE PROCEDURE [Project3].[Load_BuildingLocation] @UserAuthorizationKey AS INT
 AS
 BEGIN
-
+	    DECLARE @StartTime DATETIME2 = SYSDATETIME();
 
     -- SET NOCOUNT ON added to prevent extra result sets from
     -- interfering with SELECT statements.
@@ -19,12 +19,27 @@ BEGIN
 
     INSERT INTO Location.BuildingLocation
     (
-        BuildingName
+        BuildingName,
+		UserAuthorizationKey
     )
     SELECT DISTINCT
-           SUBSTRING([Location], 1, 2)
+           SUBSTRING([Location], 1, 2), @UserAuthorizationKey
     FROM Uploadfile.NormalizedCourseOffering
     WHERE [Location] != 'TBA';
+
+    DECLARE @RowCount INT =
+            (
+                SELECT COUNT(*) FROM Location.BuildingLocation
+            );
+    DECLARE @EndTime DATETIME2 = SYSDATETIME();
+    EXEC Process.usp_TrackWorkFlow @UserAuthorizationKey = @UserAuthorizationKey,
+                                   @WorkFlowStepDescription = N'Create the BuildingLocation Table',
+                                   @WorkFlowStepTableRowCount = @RowCount,
+                                   @StartingDateTime = @StartTime,
+                                   @EndingDateTime = @EndTime;
+
+
+
 
 END;
 GO

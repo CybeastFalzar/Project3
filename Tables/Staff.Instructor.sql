@@ -1,8 +1,11 @@
 CREATE TABLE [Staff].[Instructor]
 (
 [InstructorID] [Staff].[InstructorID] NOT NULL,
-[FirstName] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-[LastName] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-[FullName] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+[FirstName] [Staff].[FirstName] NULL,
+[LastName] [Staff].[LastName] NULL,
+[FullName] [Staff].[FullName] NULL,
+[UserAuthorizationKey] [int] NULL,
+[DateAdded] [datetime2] NULL CONSTRAINT [DF_Instructor_DateAdded] DEFAULT (sysdatetime()),
+[DateOfLastUpdate] [datetime2] NULL CONSTRAINT [DF_Instructor_DateOfLastUpdate] DEFAULT (sysdatetime())
 ) ON [PRIMARY]
 GO
