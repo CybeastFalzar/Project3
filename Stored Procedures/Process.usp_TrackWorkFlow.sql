@@ -4,8 +4,7 @@ SET ANSI_NULLS ON
 GO
 
 -- =============================================
--- Author:		Lamyea Hoque, Saima Tarannum, 
---				Tahreem Ishfaq
+-- Author:
 -- Create date: 04/11/2022
 -- Description:	Gets total execution time and
 --				member execution time from 
