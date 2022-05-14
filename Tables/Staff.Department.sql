@@ -10,3 +10,5 @@ CREATE TABLE [Staff].[Department]
 GO
 ALTER TABLE [Staff].[Department] ADD CONSTRAINT [PK_Department] PRIMARY KEY CLUSTERED ([DepartmentName]) ON [PRIMARY]
 GO
+CREATE NONCLUSTERED INDEX [NumberOfStaff] ON [Staff].[Department] ([NumOfStaff]) ON [PRIMARY]
+GO

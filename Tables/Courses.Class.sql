@@ -10,3 +10,5 @@ CREATE TABLE [Courses].[Class]
 GO
 ALTER TABLE [Courses].[Class] ADD CONSTRAINT [PK_Class] PRIMARY KEY CLUSTERED ([Class]) ON [PRIMARY]
 GO
+CREATE NONCLUSTERED INDEX [I_NumberOfClasses] ON [Courses].[Class] ([NumberOfClasses]) ON [PRIMARY]
+GO

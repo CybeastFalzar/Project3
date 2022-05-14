@@ -11,3 +11,7 @@ CREATE TABLE [Staff].[Instructor]
 GO
 ALTER TABLE [Staff].[Instructor] ADD CONSTRAINT [PK_Instructor] PRIMARY KEY CLUSTERED ([InstructorID]) ON [PRIMARY]
 GO
+CREATE NONCLUSTERED INDEX [FirstName] ON [Staff].[Instructor] ([FirstName]) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [LastName] ON [Staff].[Instructor] ([LastName]) ON [PRIMARY]
+GO

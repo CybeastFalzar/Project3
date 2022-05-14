@@ -10,6 +10,10 @@ CREATE TABLE [Courses].[CourseClass]
 [DateOfLastUpdate] [datetime2] NULL CONSTRAINT [DF_CourseClass_DateOfLastUpdate] DEFAULT (sysdatetime())
 ) ON [PRIMARY]
 GO
+CREATE NONCLUSTERED INDEX [Classes] ON [Courses].[CourseClass] ([Class], [SectionNo]) ON [PRIMARY]
+GO
+CREATE CLUSTERED INDEX [Courses] ON [Courses].[CourseClass] ([CourseID], [CourseName]) ON [PRIMARY]
+GO
 ALTER TABLE [Courses].[CourseClass] ADD CONSTRAINT [FK_CourseClass_Class] FOREIGN KEY ([Class]) REFERENCES [Courses].[Class] ([Class])
 GO
 ALTER TABLE [Courses].[CourseClass] ADD CONSTRAINT [FK_CourseClass_Course] FOREIGN KEY ([CourseID]) REFERENCES [Courses].[Course] ([CourseID])
