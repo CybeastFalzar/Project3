@@ -32,9 +32,12 @@ BEGIN
     DROP CONSTRAINT IF EXISTS FK_InstructorDepartments_Instructor, CONSTRAINT IF
                        EXISTS FK_InstructorDepartments_Department;
 
+    ALTER TABLE Courses.ClassBuilding
+    DROP CONSTRAINT FK_ClassBuilding_Class, CONSTRAINT IF
+         EXISTS FK_ClassBuilding_BuildingLocation, CONSTRAINT IF
+         EXISTS FK_ClassBuilding_RoomLocation;
 
-
-    DECLARE @RowCount INT = 0
+    DECLARE @RowCount INT = 0;
     DECLARE @EndTime DATETIME2 = SYSDATETIME();
     EXEC Process.usp_TrackWorkFlow @UserAuthorizationKey = @UserAuthorizationKey,
                                    @WorkFlowStepDescription = N'Drop Foreign Keys',

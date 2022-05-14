@@ -28,7 +28,7 @@ BEGIN
 	TRUNCATE TABLE Staff.Department
 	TRUNCATE TABLE Staff.Instructor
 	TRUNCATE TABLE Staff.InstructorDepartments
-
+	TRUNCATE TABLE Courses.ClassBuilding
 	--TRUNCATE TABLE Process.WorkflowSteps
 
 

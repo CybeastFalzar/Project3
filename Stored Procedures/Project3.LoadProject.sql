@@ -43,7 +43,7 @@ DECLARE @StartTime DATETIME2 =SYSDATETIME();
 		EXEC Project3.Load_Instructor @UserAuthorizationKey = 2 -- int
 		EXEC Project3.Load_InstructorDepartments @UserAuthorizationKey = 2 -- int
 		EXEC Project3.Load_CourseClass @UserAuthorizationKey = 1 -- int
-
+		EXEC Project3.Load_ClassBuilding @UserAuthorizationKey = 1
 		
 		
   --

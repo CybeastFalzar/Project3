@@ -107,7 +107,13 @@ BEGIN
 	SELECT @TableStatus, 'Courses.CourseClass', COUNT(*)
 	FROM Courses.CourseClass
 
-
+	INSERT INTO Project3.[RowCount] (
+		TableStatus,
+		TableName, 
+		[RowCount]
+	)
+	SELECT @TableStatus, 'Courses.ClassBuilding', COUNT(*)
+	FROM Courses.ClassBuilding
 	
    		 DECLARE @RowCount INT = (SELECT COUNT(*) FROM Project3.[RowCount]);
 
